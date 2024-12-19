@@ -1,5 +1,10 @@
+import 'package:e_commerce_flutter/products.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
+import 'custombutton.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({super.key});
@@ -32,13 +37,18 @@ class Welcome extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 30.0),
-              child: SizedBox(
-                height: 80,
+              padding: const EdgeInsets.all(20.0),
+              child: CustomButton(
                 width: 300,
-                child: FloatingActionButton(onPressed: (){
-                },child: const Text("Get Started", style:
-                    TextStyle(fontSize: 30)),),
+                height: 40,
+                radius: 12,
+                myFun: () {
+                  Get.to(ApiCall());
+                },
+                color: Colors.orangeAccent,
+
+                child: const Text("Explore our products",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
               ),
             ),
           ],
